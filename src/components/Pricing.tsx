@@ -18,7 +18,7 @@ export default function Pricing() {
           {pricing.map((cat, i) => (
             <div key={i}
               className={`rounded-3xl overflow-hidden border border-rose-100 dark:border-gray-700 hover-lift transition-all duration-700 ${delays[i]} ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] p-6 flex items-center justify-center gap-3">
+              <div className="bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#B8860B] dark:to-[#FFD700] p-6 flex items-center justify-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white">
                   {cat.icon}
                 </div>

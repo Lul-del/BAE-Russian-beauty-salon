@@ -15,7 +15,7 @@ export default function Footer() {
             Réservez votre rendez-vous dès maintenant et laissez nos expertes prendre soin de vous.
           </p>
           <a href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] text-white font-semibold shadow-2xl hover:scale-105 transition-all">
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white font-semibold shadow-2xl hover:scale-105 transition-all">
             Réserver maintenant <ArrowRight className="w-5 h-5" />
           </a>
         </div>
@@ -34,13 +34,13 @@ export default function Footer() {
               Salon de beauté spécialisé dans les techniques russes. Extensions de cils, coiffure et manucure haut de gamme.
             </p>
             <div className="flex gap-3">
-              <a href="https://www.instagram.com/bae_beautysalon_/?hl=fr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-rose-400 dark:hover:bg-yellow-500 transition-colors">
+              <a href="https://www.instagram.com/bae_beautysalon_/?hl=fr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-rose-400 dark:hover:bg-[#D4AF37] transition-colors">
                 <InstagramIcon className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-rose-400 dark:hover:bg-yellow-500 transition-colors">
+              <a href="#" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-rose-400 dark:hover:bg-[#D4AF37] transition-colors">
                 <FacebookIcon className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="TikTok" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-rose-400 dark:hover:bg-yellow-500 transition-colors">
+              <a href="#" aria-label="TikTok" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-rose-400 dark:hover:bg-[#D4AF37] transition-colors">
                 <TikTokIcon className="w-4 h-4" />
               </a>
             </div>
@@ -49,10 +49,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-white/90">Services</h4>
             <ul className="space-y-2 text-sm text-white/50">
-              <li><a href="#services" className="hover:text-rose-400 dark:hover:text-yellow-400 transition-colors">Extensions de Cils</a></li>
-              <li><a href="#services" className="hover:text-rose-400 dark:hover:text-yellow-400 transition-colors">Coiffure & Cheveux</a></li>
-              <li><a href="#services" className="hover:text-rose-400 dark:hover:text-yellow-400 transition-colors">Manucure & Ongles</a></li>
-              <li><a href="#tarifs" className="hover:text-rose-400 dark:hover:text-yellow-400 transition-colors">Tarifs</a></li>
+              <li><a href="#services" className="hover:text-rose-400 dark:hover:text-[#D4AF37] transition-colors">Extensions de Cils</a></li>
+              <li><a href="#services" className="hover:text-rose-400 dark:hover:text-[#D4AF37] transition-colors">Coiffure & Cheveux</a></li>
+              <li><a href="#services" className="hover:text-rose-400 dark:hover:text-[#D4AF37] transition-colors">Manucure & Ongles</a></li>
+              <li><a href="#tarifs" className="hover:text-rose-400 dark:hover:text-[#D4AF37] transition-colors">Tarifs</a></li>
             </ul>
           </div>
 
@@ -60,7 +60,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-white/90">Contact</h4>
             <ul className="space-y-2 text-sm text-white/50">
               <li>
-                <a href="https://www.google.com/maps/place/BAE+Russian+beauty+salon+Lashes+Hair+Nails/@19.0510618,39.4495844,5.46z/data=!4m17!1m10!4m9!1m4!2m2!1d2.392064!2d6.3799296!4e1!1m3!2m2!1d55.2732704!2d25.1772449!3m5!1s0x3e5f69ae921d04f1:0x19ddbcd72e67715f!8m2!3d25.1772449!4d55.2732704!16s%2Fg%2F11vdg6_5b0?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-rose-400 dark:hover:text-yellow-400 transition-colors">
+                <a href="https://www.google.com/maps/place/BAE+Russian+beauty+salon+Lashes+Hair+Nails/@19.0510618,39.4495844,5.46z/data=!4m17!1m10!4m9!1m4!2m2!1d2.392064!2d6.3799296!4e1!1m3!2m2!1d55.2732704!2d25.1772449!3m5!1s0x3e5f69ae921d04f1:0x19ddbcd72e67715f!8m2!3d25.1772449!4d55.2732704!16s%2Fg%2F11vdg6_5b0?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-rose-400 dark:hover:text-[#D4AF37] transition-colors">
                   <MapPin className="w-3.5 h-3.5 shrink-0" /> Business Bay, Dubaï, UAE
                 </a>
               </li>

@@ -19,7 +19,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div key={i}
               className={`flex gap-5 py-8 transition-all duration-700 ${delays[i]} ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-              <div className="shrink-0 w-12 h-12 rounded-full bg-linear-to-br from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] flex items-center justify-center text-white font-bold text-base">
+              <div className="shrink-0 w-12 h-12 rounded-full bg-linear-to-br from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] flex items-center justify-center text-white font-bold text-base">
                 {t.name[0]}
               </div>
               <div className="flex-1 min-w-0">

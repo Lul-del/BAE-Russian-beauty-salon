@@ -19,7 +19,7 @@ export default function About() {
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-xl shadow-rose-100/50 dark:shadow-gray-900/50 border border-rose-50 dark:border-gray-700">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-linear-to-br from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-linear-to-br from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] flex items-center justify-center">
                     <Heart className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -39,7 +39,7 @@ export default function About() {
 
           {/* Right - Content */}
           <div className={`transition-all duration-700 delay-200 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-            <span className="inline-flex items-center gap-2 text-[#ED5389] dark:text-[#EDCD64] font-medium text-sm uppercase tracking-widest mb-3">
+            <span className="inline-flex items-center gap-2 text-[#ED5389] dark:text-[#D4AF37] font-medium text-sm uppercase tracking-widest mb-3">
               <Sparkles className="w-4 h-4" /> À propos de nous
             </span>
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -85,7 +85,7 @@ export default function About() {
               ))}
             </div>
 
-            <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] text-white font-semibold shadow-lg transition-all hover:scale-105">
+            <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white font-semibold shadow-lg transition-all hover:scale-105">
               Nous contacter <ArrowRight className="w-5 h-5" />
             </a>
           </div>

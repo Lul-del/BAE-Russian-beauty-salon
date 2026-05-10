@@ -88,7 +88,7 @@ export default function Contact() {
               {contactInfo.map((item, i) => {
                 const inner = (
                   <>
-                    <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-rose-100 to-pink-100 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center text-[#ED5389] dark:text-[#EDCD64] shrink-0">
+                    <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-rose-100 to-pink-100 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center text-[#ED5389] dark:text-[#D4AF37] shrink-0">
                       {item.icon}
                     </div>
                     <div>
@@ -109,7 +109,7 @@ export default function Contact() {
 
             {/* Opening Hours */}
             <div className="mb-8 rounded-2xl border border-rose-100 dark:border-gray-700 overflow-hidden">
-              <div className="flex items-center gap-2 px-5 py-3 bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64]">
+              <div className="flex items-center gap-2 px-5 py-3 bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37]">
                 <Clock className="w-4 h-4 text-white" />
                 <span className="text-white font-semibold text-sm">Opening Hours</span>
               </div>
@@ -117,7 +117,7 @@ export default function Contact() {
                 {schedule.map((s) => (
                   <div key={s.day} className="flex items-center justify-between px-5 py-2.5">
                     <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">{s.day}</span>
-                    <span className="text-[#ED5389] dark:text-[#EDCD64] text-sm font-semibold">{s.hours}</span>
+                    <span className="text-[#ED5389] dark:text-[#D4AF37] text-sm font-semibold">{s.hours}</span>
                   </div>
                 ))}
               </div>
@@ -127,7 +127,7 @@ export default function Contact() {
             <div className="flex items-center gap-4 mb-8">
               <span className="text-gray-500 dark:text-gray-400 text-sm font-medium">Suivez-nous :</span>
               {socials.map((s, i) => (
-                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="w-10 h-10 rounded-full bg-rose-50 dark:bg-gray-700 flex items-center justify-center text-[#ED5389] dark:text-[#EDCD64] hover:bg-linear-to-br hover:from-[#FF61EF] hover:to-[#ED5389] dark:hover:from-[#EDB009] dark:hover:to-[#EDCD64] hover:text-white transition-all">
+                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="w-10 h-10 rounded-full bg-rose-50 dark:bg-gray-700 flex items-center justify-center text-[#ED5389] dark:text-[#D4AF37] hover:bg-linear-to-br hover:from-[#FF61EF] hover:to-[#ED5389] dark:hover:from-[#B8860B] dark:hover:to-[#FFD700] hover:text-white transition-all">
                   {s.icon}
                 </a>
               ))}
@@ -154,11 +154,11 @@ export default function Contact() {
             {/* Tab switcher */}
             <div className="flex rounded-2xl bg-rose-50 dark:bg-gray-800 p-1 mb-6 gap-1">
               <button type="button" onClick={() => setTab('qr')}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-all ${tab === 'qr' ? 'bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] text-white shadow-md' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}>
+                className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-all ${tab === 'qr' ? 'bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white shadow-md' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}>
                 <QrCode className="w-4 h-4" /> Scanner le QR code
               </button>
               <button type="button" onClick={() => setTab('form')}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-all ${tab === 'form' ? 'bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] text-white shadow-md' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}>
+                className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-all ${tab === 'form' ? 'bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white shadow-md' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}>
                 <MessageCircle className="w-4 h-4" /> Remplir le formulaire
               </button>
             </div>
@@ -166,7 +166,7 @@ export default function Contact() {
             {/* QR Code panel */}
             {tab === 'qr' && (
               <div className="bg-linear-to-br from-rose-50/50 to-pink-50/50 dark:bg-gray-800 dark:from-gray-800 dark:to-gray-800 rounded-3xl p-8 border border-rose-100/50 dark:border-gray-700 flex flex-col items-center text-center gap-6">
-                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] flex items-center justify-center shadow-lg">
+                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] flex items-center justify-center shadow-lg">
                   <QrCode className="w-8 h-8 text-white" />
                 </div>
                 <div>
@@ -186,7 +186,7 @@ export default function Contact() {
                   href={BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] text-white font-semibold shadow-lg hover:scale-105 transition-all text-sm">
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white font-semibold shadow-lg hover:scale-105 transition-all text-sm">
                   <MessageCircle className="w-4 h-4" /> Ouvrir WhatsApp directement
                 </a>
               </div>
@@ -202,27 +202,27 @@ export default function Contact() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Prénom</label>
-                      <input type="text" required value={form.firstname} onChange={set('firstname')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#EDCD64]/40 transition-all text-sm" placeholder="Votre prénom" />
+                      <input type="text" required value={form.firstname} onChange={set('firstname')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#FFD700]/40 transition-all text-sm" placeholder="Votre prénom" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nom</label>
-                      <input type="text" required value={form.lastname} onChange={set('lastname')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#EDCD64]/40 transition-all text-sm" placeholder="Votre nom" />
+                      <input type="text" required value={form.lastname} onChange={set('lastname')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#FFD700]/40 transition-all text-sm" placeholder="Votre nom" />
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Téléphone</label>
-                    <input type="tel" required value={form.phone} onChange={set('phone')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#EDCD64]/40 transition-all text-sm" placeholder="+971 58 531 0080" />
+                    <input type="tel" required value={form.phone} onChange={set('phone')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#FFD700]/40 transition-all text-sm" placeholder="+971 58 531 0080" />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
-                    <input type="email" required value={form.email} onChange={set('email')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#EDCD64]/40 transition-all text-sm" placeholder="votre@email.com" />
+                    <input type="email" required value={form.email} onChange={set('email')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#FFD700]/40 transition-all text-sm" placeholder="votre@email.com" />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Service souhaité</label>
-                    <select required aria-label="Service souhaité" value={form.service} onChange={set('service')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#EDCD64]/40 transition-all text-sm">
+                    <select required aria-label="Service souhaité" value={form.service} onChange={set('service')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#FFD700]/40 transition-all text-sm">
                       <option value="">Choisir un service</option>
                       <optgroup label="Cils">
                         <option>Volume Russe</option>
@@ -247,11 +247,11 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message (optionnel)</label>
-                    <textarea rows={3} value={form.message} onChange={set('message')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#EDCD64]/40 transition-all text-sm resize-none" placeholder="Précisez vos besoins..." />
+                    <textarea rows={3} value={form.message} onChange={set('message')} className="w-full px-4 py-3 rounded-xl border border-rose-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ED5389]/40 dark:focus:ring-[#FFD700]/40 transition-all text-sm resize-none" placeholder="Précisez vos besoins..." />
                   </div>
 
                   <button type="submit"
-                    className="w-full py-4 rounded-xl bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] text-white font-semibold text-lg shadow-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2">
+                    className="w-full py-4 rounded-xl bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white font-semibold text-lg shadow-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2">
                     <MessageCircle className="w-5 h-5" /> Envoyer sur WhatsApp
                   </button>
                 </div>

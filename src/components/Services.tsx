@@ -27,12 +27,12 @@ export default function Services() {
               <ul className="space-y-2">
                 {s.items.map((item, j) => (
                   <li key={j} className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                    <CheckCircle2 className="w-4 h-4 text-[#ED5389] dark:text-[#EDCD64] shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#ED5389] dark:text-[#D4AF37] shrink-0" />
                     <span className="text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
-              <a href="#tarifs" className="inline-flex items-center gap-1 mt-6 text-[#ED5389] dark:text-[#EDCD64] font-medium text-sm hover:gap-2 transition-all">
+              <a href="#tarifs" className="inline-flex items-center gap-1 mt-6 text-[#ED5389] dark:text-[#D4AF37] font-medium text-sm hover:gap-2 transition-all">
                 Voir les tarifs <ArrowRight className="w-4 h-4" />
               </a>
             </div>

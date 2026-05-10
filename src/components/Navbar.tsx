@@ -7,7 +7,6 @@ const links = [
   { href: '#accueil', label: 'Accueil' },
   { href: '#services', label: 'Services' },
   { href: '#galerie', label: 'Galerie' },
-  { href: '#tarifs', label: 'Tarifs' },
   { href: '#avis', label: 'Avis' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -42,23 +41,23 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             {links.map(l => (
               <a key={l.href} href={l.href}
-                className={`text-sm font-medium transition-colors hover:text-[#FF61EF] dark:hover:text-[#EDCD64] ${linkColor}`}>
+                className={`text-sm font-medium transition-colors hover:text-[#FF61EF] dark:hover:text-[#D4AF37] ${linkColor}`}>
                 {l.label}
               </a>
             ))}
             <button type="button" onClick={toggle} aria-label="Toggle dark mode"
-              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110 ${scrolled ? 'bg-rose-50 dark:bg-gray-800 text-gray-700 dark:text-yellow-400' : 'bg-white/10 text-white'}`}>
+              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110 ${scrolled ? 'bg-rose-50 dark:bg-gray-800 text-gray-700 dark:text-[#D4AF37]' : 'bg-white/10 text-white'}`}>
               {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
             <a href="#contact"
-              className="px-5 py-2.5 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] text-white text-sm font-semibold shadow-lg transition-all hover:scale-105">
+              className="px-5 py-2.5 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white text-sm font-semibold shadow-lg transition-all hover:scale-105">
               Réserver
             </a>
           </div>
 
           <div className="md:hidden flex items-center gap-2">
             <button type="button" onClick={toggle} aria-label="Toggle dark mode"
-              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${scrolled ? 'bg-rose-50 dark:bg-gray-800 text-gray-700 dark:text-yellow-400' : 'bg-white/10 text-white'}`}>
+              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${scrolled ? 'bg-rose-50 dark:bg-gray-800 text-gray-700 dark:text-[#D4AF37]' : 'bg-white/10 text-white'}`}>
               {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
             <button type="button" onClick={() => setMobileOpen(!mobileOpen)}>
@@ -75,12 +74,12 @@ export default function Navbar() {
           <div className="px-6 py-4 space-y-3">
             {links.map(l => (
               <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)}
-                className="block py-2 text-gray-700 dark:text-gray-300 font-medium hover:text-[#FF61EF] dark:hover:text-[#EDCD64] transition-colors">
+                className="block py-2 text-gray-700 dark:text-gray-300 font-medium hover:text-[#FF61EF] dark:hover:text-[#D4AF37] transition-colors">
                 {l.label}
               </a>
             ))}
             <a href="#contact" onClick={() => setMobileOpen(false)}
-              className="block text-center mt-3 px-5 py-3 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#EDB009] dark:to-[#EDCD64] text-white font-semibold">
+              className="block text-center mt-3 px-5 py-3 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white font-semibold">
               Réserver maintenant
             </a>
           </div>
