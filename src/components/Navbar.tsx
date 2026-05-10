@@ -14,51 +14,43 @@ const LANGS: { code: Lang; label: string; flag: string }[] = [
 
 const NAV_HREFS = ['#accueil', '#services', '#galerie', '#avis', '#contact'];
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
-  const { dark, toggle } = useTheme();
-  const { lang, setLang, t } = useLanguage();
-  const langRef = useRef<HTMLDivElement>(null);
+interface LangDropdownProps {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+  scrolled: boolean;
+  mobile?: boolean;
+}
 
-  useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', h);
-    return () => window.removeEventListener('scroll', h);
-  }, []);
+function LangDropdown({ lang, setLang, scrolled, mobile }: LangDropdownProps) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const currentLang = LANGS.find(l => l.code === lang)!;
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     };
     document.addEventListener('mousedown', handleClick);
     return () => document.removeEventListener('mousedown', handleClick);
   }, []);
 
-  const navLabels = [t.nav.home, t.nav.services, t.nav.gallery, t.nav.reviews, t.nav.contact];
-  const linkColor = scrolled ? 'text-gray-700 dark:text-gray-300' : 'text-white/90';
-  const currentLang = LANGS.find(l => l.code === lang)!;
-
-  const LangDropdown = ({ mobile }: { mobile?: boolean }) => (
-    <div ref={mobile ? undefined : langRef} className="relative">
-      <button type="button" onClick={() => setLangOpen(o => !o)}
+  return (
+    <div ref={ref} className="relative">
+      <button type="button" onClick={() => setOpen(o => !o)}
         className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-sm font-semibold transition-all ${
-          mobile
+          mobile || scrolled
             ? 'bg-rose-50 dark:bg-gray-800 text-gray-700 dark:text-[#D4AF37]'
-            : scrolled
-              ? 'bg-rose-50 dark:bg-gray-800 text-gray-700 dark:text-[#D4AF37]'
-              : 'bg-white/10 text-white'
+            : 'bg-white/10 text-white'
         }`}>
         <span>{currentLang.flag}</span>
         <span className="text-xs">{currentLang.label}</span>
-        <ChevronDown className={`w-3 h-3 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-3 h-3 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
-      {langOpen && (
+      {open && (
         <div className="absolute right-0 mt-2 w-32 rounded-xl bg-white dark:bg-gray-800 shadow-xl border border-rose-100 dark:border-gray-700 overflow-hidden z-50">
           {LANGS.map(l => (
             <button key={l.code} type="button"
-              onClick={() => { setLang(l.code); setLangOpen(false); }}
+              onClick={() => { setLang(l.code); setOpen(false); }}
               className={`w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors hover:bg-rose-50 dark:hover:bg-gray-700 ${
                 lang === l.code
                   ? 'text-[#ED5389] dark:text-[#D4AF37] font-semibold bg-rose-50/50 dark:bg-gray-700/50'
@@ -71,6 +63,22 @@ export default function Navbar() {
       )}
     </div>
   );
+}
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const { dark, toggle } = useTheme();
+  const { lang, setLang, t } = useLanguage();
+
+  useEffect(() => {
+    const h = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', h);
+    return () => window.removeEventListener('scroll', h);
+  }, []);
+
+  const navLabels = [t.nav.home, t.nav.services, t.nav.gallery, t.nav.reviews, t.nav.contact];
+  const linkColor = scrolled ? 'text-gray-700 dark:text-gray-300' : 'text-white/90';
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg shadow-rose-100/20 dark:shadow-gray-900/40' : 'bg-transparent'}`}>
@@ -91,7 +99,7 @@ export default function Navbar() {
                 {navLabels[i]}
               </a>
             ))}
-            <LangDropdown />
+            <LangDropdown lang={lang} setLang={setLang} scrolled={scrolled} />
             <button type="button" onClick={toggle} aria-label="Toggle dark mode"
               className={`w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110 ${scrolled ? 'bg-rose-50 dark:bg-gray-800 text-gray-700 dark:text-[#D4AF37]' : 'bg-white/10 text-white'}`}>
               {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -102,7 +110,7 @@ export default function Navbar() {
           </div>
 
           <div className="md:hidden flex items-center gap-2">
-            <LangDropdown mobile />
+            <LangDropdown lang={lang} setLang={setLang} scrolled={scrolled} mobile />
             <button type="button" onClick={toggle} aria-label="Toggle dark mode"
               className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${scrolled ? 'bg-rose-50 dark:bg-gray-800 text-gray-700 dark:text-[#D4AF37]' : 'bg-white/10 text-white'}`}>
               {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
