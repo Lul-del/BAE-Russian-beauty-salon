@@ -14,9 +14,9 @@ export default function SectionTitle({ sub, title, desc }: Props) {
       <span className="inline-flex items-center gap-2 text-[#ED5389] dark:text-[#D4AF37] font-medium text-sm uppercase tracking-widest mb-3">
         <Sparkles className="w-4 h-4" /> {sub}
       </span>
-      <h2 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">{title}</h2>
-      {desc && <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-lg">{desc}</p>}
-      <div className="mt-4 mx-auto w-24 h-1 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37]" />
+      <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">{title}</h2>
+      {desc && <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">{desc}</p>}
+      <div className="mt-4 mx-auto w-16 sm:w-20 md:w-24 h-1 rounded-full bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37]" />
     </div>
   );
 }

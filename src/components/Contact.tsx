@@ -72,7 +72,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-16 sm:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           sub="Contact"
@@ -80,29 +80,29 @@ export default function Contact() {
           desc="Scannez le QR code ou remplissez le formulaire — votre message s'envoie directement sur WhatsApp."
         />
 
-        <div ref={ref} className="grid lg:grid-cols-2 gap-12">
+        <div ref={ref} className="grid lg:grid-cols-2 gap-8 lg:gap-12">
 
           {/* ── Left : info + horaires + socials + map ── */}
           <div className={`transition-all duration-700 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <div className="space-y-6 mb-8">
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
               {contactInfo.map((item, i) => {
                 const inner = (
                   <>
-                    <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-rose-100 to-pink-100 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center text-[#ED5389] dark:text-[#D4AF37] shrink-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-linear-to-br from-rose-100 to-pink-100 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center text-[#ED5389] dark:text-[#D4AF37] shrink-0">
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white">{item.title}</h4>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">{item.text}</p>
+                      <h4 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">{item.title}</h4>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">{item.text}</p>
                     </div>
                   </>
                 );
                 return item.href ? (
-                  <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 hover:opacity-80 transition-opacity">
+                  <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 sm:gap-4 hover:opacity-80 transition-opacity">
                     {inner}
                   </a>
                 ) : (
-                  <div key={i} className="flex items-start gap-4">{inner}</div>
+                  <div key={i} className="flex items-start gap-3 sm:gap-4">{inner}</div>
                 );
               })}
             </div>
@@ -115,9 +115,9 @@ export default function Contact() {
               </div>
               <div className="divide-y divide-rose-50 dark:divide-gray-700 dark:bg-gray-800">
                 {schedule.map((s) => (
-                  <div key={s.day} className="flex items-center justify-between px-5 py-2.5">
-                    <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">{s.day}</span>
-                    <span className="text-[#ED5389] dark:text-[#D4AF37] text-sm font-semibold">{s.hours}</span>
+                  <div key={s.day} className="flex items-center justify-between px-3 sm:px-5 py-2 sm:py-2.5">
+                    <span className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium">{s.day}</span>
+                    <span className="text-[#ED5389] dark:text-[#D4AF37] text-xs sm:text-sm font-semibold">{s.hours}</span>
                   </div>
                 ))}
               </div>
@@ -154,18 +154,18 @@ export default function Contact() {
             {/* Tab switcher */}
             <div className="flex rounded-2xl bg-rose-50 dark:bg-gray-800 p-1 mb-6 gap-1">
               <button type="button" onClick={() => setTab('qr')}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-all ${tab === 'qr' ? 'bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white shadow-md' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}>
-                <QrCode className="w-4 h-4" /> Scanner le QR code
+                className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all ${tab === 'qr' ? 'bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white shadow-md' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}>
+                <QrCode className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> <span className="hidden xs:inline sm:inline">Scanner le </span>QR code
               </button>
               <button type="button" onClick={() => setTab('form')}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-all ${tab === 'form' ? 'bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white shadow-md' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}>
-                <MessageCircle className="w-4 h-4" /> Remplir le formulaire
+                className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all ${tab === 'form' ? 'bg-linear-to-r from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] text-white shadow-md' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}>
+                <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Formulaire
               </button>
             </div>
 
             {/* QR Code panel */}
             {tab === 'qr' && (
-              <div className="bg-linear-to-br from-rose-50/50 to-pink-50/50 dark:bg-gray-800 dark:from-gray-800 dark:to-gray-800 rounded-3xl p-8 border border-rose-100/50 dark:border-gray-700 flex flex-col items-center text-center gap-6">
+              <div className="bg-linear-to-br from-rose-50/50 to-pink-50/50 dark:bg-gray-800 dark:from-gray-800 dark:to-gray-800 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-rose-100/50 dark:border-gray-700 flex flex-col items-center text-center gap-4 sm:gap-6">
                 <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#FF61EF] to-[#ED5389] dark:from-[#D4AF37] dark:to-[#D4AF37] flex items-center justify-center shadow-lg">
                   <QrCode className="w-8 h-8 text-white" />
                 </div>
@@ -194,7 +194,7 @@ export default function Contact() {
 
             {/* Form panel */}
             {tab === 'form' && (
-              <form onSubmit={handleSubmit} className="bg-linear-to-br from-rose-50/50 to-pink-50/50 dark:from-gray-800 dark:to-gray-800 rounded-3xl p-8 border border-rose-100/50 dark:border-gray-700">
+              <form onSubmit={handleSubmit} className="bg-linear-to-br from-rose-50/50 to-pink-50/50 dark:from-gray-800 dark:to-gray-800 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-rose-100/50 dark:border-gray-700">
                 <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-2">Votre demande</h3>
                 <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">Remplissez le formulaire — en cliquant sur Envoyer, WhatsApp s'ouvre avec votre message prêt à envoyer.</p>
 
