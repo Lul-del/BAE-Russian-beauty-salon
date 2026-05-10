@@ -1,20 +1,25 @@
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { Eye, Scissors, Hand } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
-import { services } from '../data';
+import { useLanguage } from '../context/LanguageContext';
 import SectionTitle from './SectionTitle';
 
 const delays = ['delay-0', 'delay-150', 'delay-300'];
+const icons = [<Eye className="w-7 h-7 sm:w-8 sm:h-8" />, <Scissors className="w-7 h-7 sm:w-8 sm:h-8" />, <Hand className="w-7 h-7 sm:w-8 sm:h-8" />];
+const colors = ['from-pink-500 to-rose-400', 'from-amber-500 to-yellow-400', 'from-purple-500 to-violet-400'];
+const keys = ['lashes', 'hair', 'nails'] as const;
 
 export default function Services() {
   const { ref, inView } = useInView();
+  const { t } = useLanguage();
+
+  const services = keys.map((k, i) => ({ icon: icons[i], color: colors[i], ...t.services[k] }));
+
   return (
     <section id="services" className="py-16 sm:py-24 bg-linear-to-b from-white to-rose-50/50 dark:from-gray-900 dark:to-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle
-          sub="Nos Services"
-          title="L'Art de la Beauté"
-          desc="Des prestations complètes pour sublimer votre beauté naturelle avec des techniques russes reconnues mondialement."
-        />
+        <SectionTitle sub={t.services.sub} title={t.services.title} desc={t.services.desc} />
         <div ref={ref} className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
           {services.map((s, i) => (
             <div key={i}
@@ -33,7 +38,7 @@ export default function Services() {
                 ))}
               </ul>
               <a href="#contact" className="inline-flex items-center gap-1 mt-5 sm:mt-6 text-[#ED5389] dark:text-[#D4AF37] font-medium text-sm hover:gap-2 transition-all">
-                Prendre rendez-vous <ArrowRight className="w-4 h-4" />
+                {t.services.cta} <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           ))}
